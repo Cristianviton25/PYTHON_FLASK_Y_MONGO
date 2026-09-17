@@ -1,0 +1,91 @@
+/* --- ESTILOS GENERALES Y TEMA --- */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
+}
+
+/* --- TÍTULOS Y CABECERAS --- */
+h2, h3 {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* --- ESTILOS DE LA TABLA --- */
+.table {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: #0d6efd; /* Azul principal */
+    color: #ffffff;
+}
+
+.table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* --- IMÁGENES DE LOS ZAPATOS --- */
+.img-zapato {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.img-zapato:hover {
+    transform: scale(1.15);
+}
+
+.img-preview {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #0d6efd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* --- ICONOS DE ACCIÓN --- */
+.fa-edit, .fa-trash {
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.fa-edit:hover, .fa-trash:hover {
+    transform: scale(1.25);
+    opacity: 0.85;
+}
+
+/* --- FORMULARIOS Y TARJETAS --- */
+.card-form {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid #e3e6f0;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}

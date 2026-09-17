@@ -1,0 +1,43 @@
+<a href="/frmAgregarZapato" class="btn btn-success mb-3">
+    <i class="fa fa-plus"></i> Agregar Zapato
+</a>
+
+{% if mensaje %}
+    <div class="alert alert-danger">{{ mensaje }}</div>
+{% endif %}
+
+<table class="table table-bordered align-middle">
+    <thead class="bg-primary text-white text-center">
+        <tr>
+            <th>Código</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Talla</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+            <th>Foto</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for zapato in listaZapatos %}
+        <tr>
+            <td>{{ zapato["codigo"] }}</td>
+            <td>{{ zapato["marca"] }}</td>
+            <td>{{ zapato["modelo"] }}</td>
+            <td>{{ zapato["talla"] }}</td>
+            <td>${{ zapato["precio"] }}</td>
+            <td>{{ zapato["categoria"] }}</td>
+            <td class="text-center">
+                <img src="../static/imagenes/{{ zapato['_id'] }}.jpg" width="50" height="50" style="object-fit: cover; border-radius: 5px;">
+            </td>
+            <td class="text-center fs-4">
+                <a href="/consultar/{{ zapato['_id'] }}">
+                    <i class="fa fa-edit text-warning me-2" title="Editar"></i>
+                </a>
+                <i onclick="abrirModalEliminar('{{ zapato['_id'] }}')" class="fa fa-trash text-danger" style="cursor:pointer;" title="Eliminar"></i>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,50 @@
+{% include "encabezado.html" %}
+
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center mb-3">EDITAR ZAPATO</h3>
+
+    <form action="/actualizar" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="idZapato" id="idZapato" value="{{ zapato['_id'] }}">
+
+        <div class="mb-3">
+            <label>Código:</label>
+            <input type="number" name="txtCodigo" class="form-control" value="{{ zapato['codigo'] }}" required>
+        </div>
+        <div class="mb-3">
+            <label>Marca:</label>
+            <input type="text" name="txtMarca" class="form-control" value="{{ zapato['marca'] }}" required>
+        </div>
+        <div class="mb-3">
+            <label>Modelo:</label>
+            <input type="text" name="txtModelo" class="form-control" value="{{ zapato['modelo'] }}" required>
+        </div>
+        <div class="mb-3">
+            <label>Talla:</label>
+            <input type="number" name="txtTalla" class="form-control" value="{{ zapato['talla'] }}" required>
+        </div>
+        <div class="mb-3">
+            <label>Precio:</label>
+            <input type="number" name="txtPrecio" class="form-control" value="{{ zapato['precio'] }}" required>
+        </div>
+        <div class="mb-3">
+            <label>Categoría:</label>
+            <select name="cbCategoria" class="form-select">
+                <option value="DEPORTIVO" {% if zapato['categoria'] == 'DEPORTIVO' %}selected{% endif %}>DEPORTIVO</option>
+                <option value="URBANO" {% if zapato['categoria'] == 'URBANO' %}selected{% endif %}>URBANO</option>
+                <option value="FORMAL" {% if zapato['categoria'] == 'FORMAL' %}selected{% endif %}>FORMAL</option>
+                <option value="BOTAS" {% if zapato['categoria'] == 'BOTAS' %}selected{% endif %}>BOTAS</option>
+            </select>
+        </div>
+        <div class="mb-3 text-center">
+            <img src="../static/imagenes/{{ zapato['_id'] }}.jpg" width="100" height="100" style="object-fit: cover;">
+        </div>
+        <div class="mb-3">
+            <label>Seleccione Foto (jpg) si la va a cambiar:</label>
+            <input type="file" name="fileFoto" class="form-control" accept=".jpg">
+        </div>
+        <button type="submit" class="btn btn-warning text-white">Editar</button>
+        <a href="/" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+
+{% include "piePagina.html" %}
